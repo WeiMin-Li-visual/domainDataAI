@@ -63,6 +63,30 @@
             position: relative;
             top: 1px;
         }
+
+        .warp {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .test {
+            width: 200px;
+            height: 400px;
+            z-index: 99999;
+        }
+
+        .warp_image {
+            width: 200px;
+            height: 400px;
+            z-index: 99999;
+            background-color: #00CBFF;
+            font-size: 30px;
+        }
+
     </style>
 </head>
 <body>
@@ -70,7 +94,7 @@
 <div class="layui-fluid" style="top: 10px;bottom: 20px">
     <div class="layui-row layui-col-space15">
         <div class="layui-col-sm12 layui-col-md12 zyl_mar_01">
-            <blockquote class="layui-elem-quote"><b style="font-size: 30px">领域数据赋能系统</b>
+            <blockquote class="layui-elem-quote"><b style="font-size: 30px">领域数据赋能系统 </b>
             </blockquote>
 
         </div>
@@ -81,6 +105,21 @@
 <!-- 特效部分 -->
 <div class="layui-row" style="top: 20px;bottom: 20px">
     <div class="layui-col-sm12 layui-col-md12">
+        <div class="warp">
+            <div class="test">
+                <input class="warp_image" type="button" value="医疗数仓平台"
+                       onclick="window.location.href = 'https://www.lib61504.top:8888/'">
+            </div>
+            <div class="test">
+                <input class="warp_image" type="button" value="舆情分析平台"
+                       onclick="window.location.href = 'https://www.lib61504.top:9400/'">
+            </div>
+            <div class="test">
+                <input class="warp_image" type="button" value="中医辅疗平台"
+                       onclick="window.location.href = 'https://www.lib61504.top:9200/'">
+            </div>
+
+        </div>
         <div class="layui-carousel zyl_login_height" id="zyllogin" lay-filter="zyllogin">
             <div carousel-item="">
                 <div>
@@ -101,29 +140,12 @@
 <!-- 特效部分结束 -->
 
 <!-- 尾部 -->
-<div class="layui-row" style="top: 20px;bottom: 20px">
-    <div class="layui-col-sm12 layui-col-md12 zyl_center zyl_mar_01">
-        <b style="font-size: 15px"> © 2021 - 2022 lib61504.top 领域数据赋能系统版权所有 ICP证：
-    <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2021023842号</a></b>
-    </div>
+<div class="layui-footer" style="text-align: center">
+    <!-- 底部固定区域 -->
+    © 2021 - 2022 lib61504.top 领域数据赋能系统版权所有 ICP证：
+    <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2021023842号</a>
 </div>
 <!-- 尾部结束 -->
-
-<a href="http://localhost:9400">舆情分析平台</a>
-<!-- 登录表单 -->
-<div class="zyl_lofo_main">
-    <div id='abc'>
-        <ul>
-            <li id='function'>
-                <a href="https://www.lib61504.top:9400">舆情分析平台</a>
-            </li>
-            <li id='function'>
-                <a href="https://www.lib61504.top:9200">中医诊疗小程序</a>
-            </li>
-        </ul>
-    </div>
-</div>
-<!-- 登录表单结束 -->
 
 <!-- Jquery Js -->
 <script type="text/javascript" src="../static/js/assembly/jquery.min.js"></script>
@@ -179,15 +201,6 @@
     });
 
     'use strict';
-    {# 使用cookie #}
-    {#(() => {#}
-    {#    let cookie = $.cookie('user');#}
-    {#    console.log(cookie);#}
-    {#    if (cookie !== undefined && cookie !== '')#}
-    {#        $(window).attr('location', '/index');#}
-    {#})
-    ();
-    #}
 
     function notice(info) {
         layui.use('layer', function () {
